@@ -58,6 +58,12 @@ purchase_product = async (product_id, inventory_count) => {
 		}
 	}
 }
+
+/**
+ * Returns all the products of a cart
+ * @param  {str} token  Token of the cart
+ * @return {array}       Array of all the products in the cart
+ */
 get_products = async (token) => {
 
 	let cart = await pool.query("SELECT * FROM carts WHERE token = ?;", [token])
