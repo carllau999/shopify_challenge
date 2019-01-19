@@ -13,9 +13,9 @@
     └── README.md
 
 ##  Usage
-RESTful API documentation is currently hosted on Swagger linked below:
+RESTful API documentation is currently hosted on **Swagger** linked below:
 
-https://app.swaggerhub.com/apis-docs/carllau999/shopify_challenge/0.1
+https://app.swaggerhub.com/apis-docs/carllau999/shopify_challenge/1.0
 Click on an API and then click try it out and execute to test it. 
 > A cart must be created before calling an other cart APIs since a token is generated for a cart upon creation
 
@@ -45,3 +45,15 @@ The database can be viewed at http://142.93.151.141/phpmyadmin/ with the followi
 username: user
 password: shopify
 ```
+## Database Structure
+Table carts:
+
+| token        | products           | 
+| ------------- |-------------|
+| string     | string of product ids seperated by commas | 
+
+Table products:
+
+| id        | title           | price    | inventory_count |
+| ------------- |-------------| ---------| ----------------|
+| int     | string | float        | int |
