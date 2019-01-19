@@ -15,7 +15,7 @@
 ##  Usage
 RESTful API documentation is currently hosted on Swagger linked below:
 
-https://app.swaggerhub.com/apis-docs/carllau999/shopify_challenge/0.1
+https://app.swaggerhub.com/apis-docs/carllau999/shopify_challenge/1.0
 Click on an API and then click try it out and execute to test it. 
 > A cart must be created before calling an other cart APIs since a token is generated for a cart upon creation
 
