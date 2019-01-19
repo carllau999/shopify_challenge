@@ -46,7 +46,7 @@ app.post('/add', async (req, res) => {
 	if (token_gen.isValid(token)) {
 		try {
 			let products = await get_products(token)
-			if(products.indexOf(product_id.toString()) > -1 ){
+			if (products.indexOf(product_id.toString()) > -1) {
 				throw new Error("Product already in cart")
 			}
 			products.push(product_id)
@@ -62,8 +62,10 @@ app.post('/add', async (req, res) => {
 				error: err.message
 			})
 		}
-	} else{
-		return res.send(400).send({msg: "Invalid token"})
+	} else {
+		return res.status(400).send({
+			msg: "Invalid token"
+		})
 	}
 })
 
@@ -108,8 +110,10 @@ app.post('/purchase', async (req, res) => {
 				error: err.message
 			})
 		}
-	}else{
-		return res.send(400).send({msg: "Invalid token"})
+	} else {
+		return res.status(400).send({
+			msg: "Invalid token"
+		})
 	}
 })
 /**
@@ -126,8 +130,8 @@ app.post('/remove', async (req, res) => {
 			let products = await get_products(token)
 			let index = products.indexOf(product.toString())
 			if (index > -1) {
-			  products.splice(index, 1);
-			}else{
+				products.splice(index, 1);
+			} else {
 				throw new Error("Product not in cart")
 			}
 
@@ -135,7 +139,7 @@ app.post('/remove', async (req, res) => {
 			let update_cart = await pool.query("UPDATE carts SET products = ? WHERE token = ?;", [new_p_list, token])
 			return res.send({
 				msg: "Removed from cart succesfully"
-			})			
+			})
 
 		} catch (err) {
 			return res.status(400).send({
@@ -143,7 +147,9 @@ app.post('/remove', async (req, res) => {
 				error: err.message
 			})
 		}
-	}else{
-		return res.send(400).send({msg: "Invalid token"})
+	} else {
+		return res.status(400).send({
+			msg: "Invalid token"
+		})
 	}
 })
