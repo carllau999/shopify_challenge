@@ -1,3 +1,17 @@
+## Folder Structure
+    .
+    ├── cart                   # Files containing API routes affecting the cart
+          ├── index 
+    ├── models                 # Models used
+          ├── cart_model
+    ├── products               # Files containing API routes querying products
+          ├── index
+    ├── config                 # MySQL database credentials
+    ├── database               # Middleware for MySQL connections
+    ├── index                  # Direct API routes to cart and products
+    ├── server                 # Initialize server
+    └── README.md
+
 ##  Usage
 RESTful API documentation is currently hosted on Swagger linked below:
 
