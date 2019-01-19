@@ -45,3 +45,15 @@ The database can be viewed at http://142.93.151.141/phpmyadmin/ with the followi
 username: user
 password: shopify
 ```
+## Database Structure
+Table carts:
+
+| token        | products           | 
+| ------------- |-------------|
+| string     | string of product ids seperated by commas | 
+
+Table products:
+
+| id        | title           | price    | inventory_count |
+| ------------- |-------------| ---------| ----------------|
+| int     | string | float        | int |
