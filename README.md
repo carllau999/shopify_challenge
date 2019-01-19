@@ -46,6 +46,8 @@ username: user
 password: shopify
 ```
 ## Database Structure
+Database: live
+
 Table carts:
 
 | token        | products           | 
