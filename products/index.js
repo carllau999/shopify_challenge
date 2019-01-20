@@ -15,11 +15,8 @@ const pool = require('.././database')
  */
 app.get('/:available?', async (req, res) => {
 	let available = req.params.available
-	console.log("available", available)
 	if (available && !isNaN(available)) {
-		console.log("available")
 		let result = await pool.query('SELECT * FROM products WHERE inventory_count > ?;', [available])
-		console.log(result)
 		return res.send({
 			results: result
 		})
@@ -29,7 +26,6 @@ app.get('/:available?', async (req, res) => {
 		})
 	} else {
 		let result = await pool.query('SELECT * FROM products;')
-		console.log(result)
 		return res.send({
 			results: result
 		})
