@@ -4,7 +4,7 @@ const app = express()
 
 //mount routes for APIs modifying carts
 app.use('/cart', require('./cart'))
-
+//mount routes for APIs querying products
 app.use('/products', require('./products'))
 
 /**
