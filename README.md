@@ -1,3 +1,5 @@
+Challenge details can be found here: https://docs.google.com/document/d/1J49NAOIoWYOumaoQCKopPfudWI_jsQWVKlXmw1f1r-4/edit
+
 ## Folder Structure
     .
     ├── cart                   # Files containing API routes affecting the cart
